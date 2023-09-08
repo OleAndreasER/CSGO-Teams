@@ -1,17 +1,19 @@
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
 }
 
 .nav-logo {
+  margin-top: 6px;
+  margin-left: 10px;
   width: 80px;
 }
 
 .nav-items {
-  list-style: none;
   display: flex;
+  list-style: none;
   margin: 0;
-  padding: 0;
+  margin-left: 1em;
 }
 
 .nav-item {

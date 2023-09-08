@@ -8,6 +8,9 @@ export function Navbar() {
         <Link to="/"> <img src= "logo.png" alt = "csgo-players" className='nav-logo' /> </Link>
         <ul className="nav-items">
           <li>
+            <Link to="/" className="nav-item"> Teams </Link>
+          </li>
+          <li>
             <Link to="/favorites" className="nav-item"> Favorites </Link>
           </li>
         </ul>
