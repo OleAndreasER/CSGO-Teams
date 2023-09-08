@@ -1,20 +1,18 @@
-import './App.css'
+import './app.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./navbar/Navbar"
-import Mainpage from './mainpage/Mainpage';
-import Favorites from './favorites/Favorites';
+import { Navbar } from './navbar/navbar';
+import { Mainpage } from './mainpage/mainpage';
+import { Favorites } from './favorites/favorites';
 
-function App() {
+export function App() {
 
   return (
     <Router>
       <Navbar/>
       <Routes>
-          <Route path="/mainpage" element={<Mainpage />}/>
+          <Route path="/" element={<Mainpage />}/>
           <Route path="/favorites" element={<Favorites />}/>
       </Routes>
-    </Router> 
+    </Router>
   )
 }
-
-export default App

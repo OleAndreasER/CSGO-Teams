@@ -1,11 +1,9 @@
-import "./Favorites.css"
+import "./favorites.css"
 
-function Favorites() {
+export function Favorites() {
   return (
     <div>
         Favorite
     </div>
   );
 }
-
-export default Favorites;

@@ -1,36 +1,42 @@
 .nav {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-  }
-  
-  .nav-items {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-items > li {
-    padding: 20px;
-    font-weight: 600;
-    font-size: 20px;
-    cursor: pointer;
-    position: relative;
-  }
-  
-  .nav-items > li:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: #333333;
-    transition: width 0.3s ease-in-out;
-  }
-  
-  .nav-items > li:hover:before {
-    width: 100%;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  width: 80px;
+}
+
+.nav-items {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-items > li {
+  padding: 20px;
+  font-weight: 600;
+  font-size: 20px;
+  position: relative;
+}
+
+.nav-items > li:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #333333;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-items > li:hover:before {
+  width: 100%;
+}

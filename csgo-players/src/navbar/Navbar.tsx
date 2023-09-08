@@ -1,15 +1,17 @@
-import "./Navbar.css"
+import "./navbar.css"
+import { Link } from "react-router-dom";
 
-function Navbar() {
+export function Navbar() {
   return (
     <>
       <nav className="nav">
+        <Link to="/"> <img src= "logo.png" alt = "csgo-players" className='nav-logo' /> </Link>
         <ul className="nav-items">
-          <li> Favorites </li>
+          <li>
+            <Link to="/favorites" className="nav-item"> Favorites </Link>
+          </li>
         </ul>
       </nav>
     </>
   );
 }
-
-export default Navbar;

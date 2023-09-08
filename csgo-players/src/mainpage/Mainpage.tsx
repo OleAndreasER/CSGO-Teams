@@ -1,11 +1,9 @@
-import "./Mainpage.css"
+import "./mainpage.css"
 
-function Mainpage() {
+export function Mainpage() {
   return (
     <div>
         Main
     </div>
   );
 }
-
-export default Mainpage;
