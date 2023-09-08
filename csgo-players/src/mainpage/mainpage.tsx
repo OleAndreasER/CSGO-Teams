@@ -1,9 +1,14 @@
-import "./mainpage.css"
+import { useTeams } from "../teams/use-teams";
+import "./mainpage.css";
 
 export function Mainpage() {
+  const teams = useTeams();
+
+  if (teams === undefined) return <></>;
   return (
     <div>
-        Main
+      {teams[0].name}
+      <img src={teams[0].logo} />
     </div>
   );
 }
