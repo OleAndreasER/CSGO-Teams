@@ -1,7 +1,7 @@
-import "./App.css";
-import { useTeams } from "./teams/use-teams";
+import { useTeams } from "../teams/use-teams";
+import "./mainpage.css";
 
-export function App() {
+export function Mainpage() {
   const teams = useTeams();
 
   if (teams === undefined) return <></>;
