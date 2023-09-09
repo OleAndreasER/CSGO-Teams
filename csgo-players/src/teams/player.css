@@ -1,9 +1,11 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 .player {
+  color: black;
   text-align: center;
   border: 1px solid black;
-  font-family: "Roboto", sans-serif;
-  color: black;
-
   display: grid;
   grid-template-columns: 1fr;
 
