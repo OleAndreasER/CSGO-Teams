@@ -5,17 +5,20 @@ interface PlayerProps {
   player: PlayerData;
 }
 
-export default function Player(props: PlayerProps) {
+export default function Player({
+  player: {
+    fullname: fullnameWithNickname,
+    image,
+    nickname,
+    country: { name: countryName, flag: countryFlagImage },
+  },
+}: PlayerProps) {
   const fullname =
     // The fullname from the API is in the format "'Firstname' 'Nickname' 'Lastname'",
     // so we need to split it up and only use the first and last name
-    props.player.fullname.split(" ")[0] +
+    fullnameWithNickname.split(" ")[0] +
     " " +
-    props.player.fullname.split(" ")[2];
-  const image = props.player.image;
-  const nickname = props.player.nickname;
-  const countryName = props.player.country.name;
-  const countryFlagImage = props.player.country.flag;
+    fullnameWithNickname.split(" ")[2];
 
   return (
     <div className="player">
