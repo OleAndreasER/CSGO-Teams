@@ -1,7 +1,7 @@
 import { useTeams } from "../teams/use-teams";
 import "./mainpage.css";
 
-export function Mainpage() {
+export default function Mainpage() {
   const teams = useTeams();
 
   if (teams === undefined) return <></>;
@@ -9,6 +9,6 @@ export function Mainpage() {
     <div>
       {teams[0].name}
       <img src={teams[0].logo} />
-    </div>
+          </div>
   );
 }
