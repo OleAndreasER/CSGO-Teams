@@ -1,12 +1,12 @@
-export interface Team {
+export interface TeamData {
   id: number;
   ranking: number;
   name: string;
   logo: string;
-  players: Player[];
+  players: PlayerData[];
 }
 
-export interface Player {
+export interface PlayerData {
   fullname: string;
   image: string;
   nickname: string;

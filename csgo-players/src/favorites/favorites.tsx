@@ -1,9 +1,9 @@
 import "./favorites.css"
 
-export function Favorites() {
+export default function Favorites() {
   return (
     <div>
-        Favorite
+      Favorite
     </div>
   );
 }
