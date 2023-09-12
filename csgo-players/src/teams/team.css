@@ -1,0 +1,47 @@
+.team {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: solid black 2px;
+}
+
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    border: solid black 3px;
+    height: 80%;
+    width: 80%;
+}
+
+.teamHeader {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logoName {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.ranking {
+    text-align: center;
+}
+
+.logoImage {
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    margin-right: 5%;
+}
