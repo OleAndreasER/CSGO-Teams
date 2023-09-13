@@ -7,15 +7,15 @@ import { useEffect, useState } from "react";
 export default function Mainpage() {
   const teamsFromAPI = useTeams();
 
-  const [sort, setSort] = useState<string>("");
-  const [country, setCountry] = useState<string>("");
+  const [sortOption, setSortOption] = useState<string>("");
+  const [selectedCountry, setSelectedCountry] = useState<string>("");
   const [teams, setTeams] = useState<TeamData[]>([]);
   const [countries, setCountries] = useState<string[]>([]);
 
   useEffect(() => {
     if (teamsFromAPI !== undefined) {
       const teamsWithPlayersFromCountry: Map<string, TeamData[]> = new Map();
-    
+
       // Iterate over all teams
       for (let i = 0; i < teamsFromAPI.length; i++) {
         const players: PlayerData[] = teamsFromAPI[i].players;
@@ -32,7 +32,7 @@ export default function Mainpage() {
               teamsWithPlayersFromCountry.get(country)?.push(teamsFromAPI[i]);
             }
           } else {
-            // If the country isn't in the map, add it with the an array containing the team as the value
+            // If the country isn't in the map, add it with an array containing the team as the value
             teamsWithPlayersFromCountry.set(country, [teamsFromAPI[i]]);
           }
         }
@@ -48,12 +48,12 @@ export default function Mainpage() {
       // Makes a copy of the teams array from the useTeams hook, so we don't mutate the original array
       let teamsCopy = [...teamsFromAPI];
 
-      if (country !== "") {
+      if (selectedCountry !== "") {
         // Filter out all teams that don't have any players from the selected country
         teamsCopy = teamsCopy.filter((team) => {
           for (let i = 0; i < team.players.length; i++) {
-            if (team.players[i].country.name === country) {
-              console.log(country);
+            if (team.players[i].country.name === selectedCountry) {
+              console.log(selectedCountry);
               return true;
             }
           }
@@ -62,7 +62,7 @@ export default function Mainpage() {
       }
 
       // Sort the teams according to the selected sort option
-      switch (sort) {
+      switch (sortOption) {
         case "rank-ascending":
           teamsCopy.sort((a, b) => a.ranking - b.ranking);
           break;
@@ -79,7 +79,7 @@ export default function Mainpage() {
 
       setTeams(teamsCopy);
     }
-  }, [sort, country, teamsFromAPI]);
+  }, [sortOption, selectedCountry, teamsFromAPI]);
 
   return (
     <div>
@@ -89,7 +89,7 @@ export default function Mainpage() {
           <select
             name="sort"
             id="sort"
-            onChange={(e) => setSort(e.target.value)}
+            onChange={(e) => setSortOption(e.target.value)}
           >
             <option value="rank-ascending">By rank (ascending)</option>
             <option value="rank-descending">By rank (descending)</option>
@@ -102,7 +102,7 @@ export default function Mainpage() {
           <select
             name="country"
             id="country"
-            onChange={(e) => setCountry(e.target.value)}
+            onChange={(e) => setSelectedCountry(e.target.value)}
           >
             <option value="">All countries</option>
             {countries.map((country) => (
