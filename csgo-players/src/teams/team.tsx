@@ -37,7 +37,7 @@ export default function Team({
             <div className="player-4">
                 <Player player={players[3]}/>
             </div>
-            <div className="player-4">
+            <div className="player-5">
                 <Player player={players[4]}/>
             </div>
         </div>
