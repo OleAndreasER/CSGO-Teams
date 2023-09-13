@@ -17,9 +17,9 @@ export default function Team({
  
   return (
     <div id="wrapper">
-        <div className="teamHeader">
-            <div className="logoName">
-                <img src={logo} className="logoImage" />
+        <div className="team-header">
+            <div className="logo-name">
+                <img src={logo} className="logo-image" />
                 <h1>{teamName}</h1>
             </div>
             <p className="ranking">Rank: {ranking} </p>
