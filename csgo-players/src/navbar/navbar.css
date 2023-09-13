@@ -1,19 +1,29 @@
 .nav {
   display: flex;
   justify-content: start;
+  align-content: center;
 }
 
 .nav-logo {
-  margin-top: 6px;
-  margin-left: 10px;
+  margin-left: 1em;
   width: 80px;
+  align-self: center;
+  margin-bottom: 8%;
+
+}
+
+.link-logo {
+  display: flex;
+  align-content: center;
+  padding: none;
 }
 
 .nav-items {
   display: flex;
   list-style: none;
   margin: 0;
-  margin-left: 1em;
+  margin-left: 0;
+  align-items: center;
 }
 
 .nav-item {
@@ -41,4 +51,18 @@
 
 .nav-items > li:hover:before {
   width: 100%;
+}
+
+
+@media only screen and (max-width: 380px) {
+  .nav-items > li {
+    font-size: 18px;
+    padding: 10px
+  }
+
+  .nav-logo {
+    height: 44px;
+    margin-bottom: 10%;
+  }
+  
 }

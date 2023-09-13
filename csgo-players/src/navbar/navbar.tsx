@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="nav">
-        <Link to="/"> <img src= "logo.png" alt = "csgo-players" className='nav-logo' /> </Link>
+        <Link to="/" className="link-logo"> <img src= "logo.png" alt = "csgo-players" className='nav-logo' /> </Link>
         <ul className="nav-items">
           <li>
             <Link to="/" className="nav-item"> Teams </Link>
