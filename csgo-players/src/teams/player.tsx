@@ -13,12 +13,12 @@ export default function Player({
     country: { name: countryName, flag: countryFlagImage },
   },
 }: PlayerProps) {
-  const fullname =
-    // The fullname from the API is in the format "'Firstname' 'Nickname' 'Lastname'",
-    // so we need to split it up and only use the first and last name
-    fullnameWithNickname.split(" ")[0] +
-    " " +
-    fullnameWithNickname.split(" ")[2];
+  
+  // Remove the nickname from the fullname
+  const fullname: string = fullnameWithNickname
+    .split(" ")
+    .filter((name) => name !== `'${nickname}'`)
+    .join(" ");
 
   return (
     <div className="player">
