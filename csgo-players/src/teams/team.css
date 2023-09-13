@@ -1,0 +1,49 @@
+.team {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    height: 80%;
+    width: 80%;
+    background-color: #3e4c54;
+    color: white;
+}
+
+.team-header {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo-name {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.ranking {
+    text-align: center;
+}
+
+.logo-image {
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    margin-right: 5%;
+}

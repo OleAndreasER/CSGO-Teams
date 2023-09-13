@@ -3,12 +3,11 @@
 }
 
 .player {
-  color: black;
+  color: white;
   text-align: center;
-  border: 1px solid black;
+  border-bottom: none;
   display: grid;
   grid-template-columns: 1fr;
-
   max-width: fit-content;
   min-height: auto;
   min-width: auto;
