@@ -1,15 +1,27 @@
+body {
+    --screen-height: 80%;
+    --screen-width: 80%;
+    --logo-size: 50px;
+    --player-width: 20%;
+}
 .players {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    min-width: inherit;
+    min-width: 160px;
     align-items: center;
+    min-height: 300px;
 }
 
-body {
-    --screen-height: 80%;
-    --screen-width: 80%;
+.players > div {
+    width: var(--player-width);
+    margin-right: 10px;
 }
+
+.players:first-child {
+    margin-left: 10px;
+}
+
 
 .team {
     margin-left: auto;
@@ -22,7 +34,7 @@ body {
     width: var(--screen-width);
     background-color: #3e4c54;
     color: white;
-    min-width: 300px;
+    min-width: 300px; /* Hardcoded as no smartphones with smaller than 320 px screen size */
 }
 
 .team-header {
@@ -51,8 +63,8 @@ body {
 
 .logo-image {
     text-align: center;
-    height: 50px;
-    width: 50px;
+    height: var(--logo-size);
+    width: var(--logo-size);
     margin-left: auto;
     margin-right: 1%;
 }
@@ -62,7 +74,8 @@ body {
     margin-left: 1%;
 }
 
-@media only screen and (max-width: 768px) {
+/* 768 px */
+@media only screen and (max-width: calc(768px*(5/4))) {
     /* For small screen sizes only */
     /*.team {
         height: var(--screen-height-mobile);
@@ -72,11 +85,20 @@ body {
     .players {
         flex-direction: column;
     }
+
+    body {
+        --player-width: 100%;
+    }
+   
 }
 
 @media only screen and (max-width: 450px) {
     .logo-name {
         font-size: 12px;
+    }
+
+    body {
+        --logo-size: 35px;
     }
 }
 
@@ -84,5 +106,9 @@ body {
 @media only screen and (max-width: 380px) {
     .logo-name {
         font-size: 8px;
+    }
+
+    body {
+        --logo-size: 30px;
     }
 }

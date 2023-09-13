@@ -24,19 +24,19 @@ export default function Team({
             <p className="ranking">Rank: {ranking} </p>
         </div>
          <div className="players"> 
-            <div className="player-1">
+            <div className="player-on-team">
                 <Player player={players[0]}/>
             </div>
-            <div className="player-2">
+            <div className="player-on-team">
                 <Player player={players[1]}/>
             </div>
-            <div className="player-3">
+            <div className="player-on-team">
                 <Player player={players[2]}/>
             </div>
-            <div className="player-4">
+            <div className="player-on-team">
                 <Player player={players[3]}/>
             </div>
-            <div className="player-5">
+            <div className="player-on-team">
                 <Player player={players[4]}/>
             </div>
         </div>
