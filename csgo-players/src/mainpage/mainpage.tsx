@@ -3,6 +3,7 @@ import Team from "../teams/team";
 import "./mainpage.css";
 import { PlayerData, TeamData } from "../teams/teams";
 import { useEffect, useState } from "react";
+import TeamNavigation from "./team-navigation/team-navigation";
 
 export default function Mainpage() {
   const teamsFromAPI = useTeams();
@@ -15,6 +16,7 @@ export default function Mainpage() {
   const [countryTeamLUT, setCountryTeamLUT] = useState<Map<string, TeamData[]>>(
     new Map()
   );
+  const [displayedTeamIndex, setDisplayedTeamIndex] = useState<number>(0);
 
   function allEqualCountries(arr: string[]) {
     return arr.every((v) => v === arr[0]);
@@ -125,6 +127,7 @@ export default function Mainpage() {
           teamsCopy.sort((a, b) => b.name.localeCompare(a.name));
           break;
       }
+      setDisplayedTeamIndex(0);
       setTeams(teamsCopy);
     }
   }, [
@@ -134,6 +137,8 @@ export default function Mainpage() {
     countryTeamLUT,
     showInternational,
   ]);
+
+  console.log(displayedTeamIndex)
 
   return (
     <div className="body">
@@ -186,15 +191,19 @@ export default function Mainpage() {
       <hr className="solid" />
       <div className="teams-container">
         {teams.length > 0 ? (
-          <div className="teams">
-            {teams.map((team) => (
-              <Team key={team.id} team={team} />
-            ))}
+          <div>
+            <Team team={teams[displayedTeamIndex]} />
+            <TeamNavigation
+              displayedTeamIndex={displayedTeamIndex}
+              setDisplayedTeamIndex={setDisplayedTeamIndex}
+              teams={teams.length}
+            />
           </div>
         ) : (
           "No teams match your current filters"
         )}
       </div>
+      
     </div>
   );
 }

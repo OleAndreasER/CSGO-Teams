@@ -8,4 +8,9 @@ export const useTeams = (): TeamData[] | undefined =>
         response.json()
       ),
     queryKey: ["teams"],
+    //Only fetch once
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
+    staleTime: Infinity,
   }).data;

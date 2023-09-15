@@ -14,30 +14,29 @@ export default function Team({
     players,
   },
 }: TeamProps) {
- 
   return (
-    <div id="wrapper">
+    <div className="team" id="team">
         <div className="team-header">
             <div className="logo-name">
-                <img src={logo} className="logo-image" />
-                <h1>{teamName}</h1>
+                <img src={logo} className="logo-image" id="logo-image" />
+                <h1 className="team-name">{teamName}</h1>
             </div>
             <p className="ranking">Rank: {ranking} </p>
         </div>
-         <div className="team"> 
-            <div className="player-1">
+         <div className="players"> 
+            <div className="player-on-team">
                 <Player player={players[0]}/>
             </div>
-            <div className="player-2">
+            <div className="player-on-team">
                 <Player player={players[1]}/>
             </div>
-            <div className="player-3">
+            <div className="player-on-team">
                 <Player player={players[2]}/>
             </div>
-            <div className="player-4">
+            <div className="player-on-team">
                 <Player player={players[3]}/>
             </div>
-            <div className="player-5">
+            <div className="player-on-team">
                 <Player player={players[4]}/>
             </div>
         </div>

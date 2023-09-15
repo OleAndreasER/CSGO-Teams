@@ -1,11 +1,29 @@
-.team {
+body {
+    --screen-height: 80%;
+    --screen-width: 80%;
+    --logo-size: 50px;
+    --player-width: 20%;
+}
+.players {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+    min-width: 160px;
+    align-items: center;
+    min-height: 300px;
 }
 
-#wrapper {
+.players > div {
+    width: var(--player-width);
+    margin-right: 10px;
+}
+
+.players:first-child {
+    margin-left: 10px;
+}
+
+
+.team {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10vh;
@@ -14,6 +32,7 @@
     border-radius: 10px;
     background-color: #3e4c54;
     color: white;
+    min-width: 300px; /* Hardcoded as no smartphones with smaller than 320 px screen size */
 }
 
 .team-header {
@@ -29,6 +48,7 @@
     margin-top: 2vh;
     margin-bottom: 2vh;
     display: flex;
+    width: calc(100vw*0.75);
     flex-direction: row;
     align-items: center;
     margin-top: auto;
@@ -41,7 +61,52 @@
 
 .logo-image {
     text-align: center;
-    height: 50px;
-    width: 50px;
-    margin-right: 5%;
+    height: var(--logo-size);
+    width: var(--logo-size);
+    margin-left: auto;
+    margin-right: 1%;
+}
+
+.team-name {
+    margin-right: auto;
+    margin-left: 1%;
+}
+
+/* 768 px */
+@media only screen and (max-width: calc(768px*(5/4))) {
+    /* For small screen sizes only */
+    /*.team {
+        height: var(--screen-height-mobile);
+        width: var(--screen-width-mobile);
+    }*/
+
+    .players {
+        flex-direction: column;
+    }
+
+    body {
+        --player-width: 100%;
+    }
+   
+}
+
+@media only screen and (max-width: 450px) {
+    .logo-name {
+        font-size: 12px;
+    }
+
+    body {
+        --logo-size: 35px;
+    }
+}
+
+
+@media only screen and (max-width: 380px) {
+    .logo-name {
+        font-size: 8px;
+    }
+
+    body {
+        --logo-size: 30px;
+    }
 }
