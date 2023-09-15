@@ -139,8 +139,9 @@ export default function Mainpage() {
     <div className="body">
       <div className="filter-and-sort">
         <div className="sort">
-          <label htmlFor="sort">Sort options: </label>
+          <label className="label" htmlFor="sort">Sort options: </label>
           <select
+            className="dropdown"
             value={sortOption}
             name="sort"
             id="sort"
@@ -154,8 +155,9 @@ export default function Mainpage() {
         </div>
         <div className="filter">
           <div className="country-select">
-            <label htmlFor="sort">Show teams with players from country: </label>
+            <label className="label" htmlFor="sort">Filter by country: </label>
             <select
+              className="dropdown"
               value={selectedCountry}
               name="country"
               id="country"
@@ -170,7 +172,7 @@ export default function Mainpage() {
             </select>
           </div>
           <div className="international">
-            <label htmlFor="international">Show international teams: </label>
+            <label className="label" htmlFor="international">Show international teams: </label>
             <input
               checked={showInternational}
               type="checkbox"
@@ -182,15 +184,17 @@ export default function Mainpage() {
         </div>
       </div>
       <hr className="solid" />
-      {teams.length > 0 ? (
-        <div className="teams">
-          {teams.map((team) => (
-            <Team key={team.id} team={team} />
-          ))}
-        </div>
-      ) : (
-        "No teams match your current filters"
-      )}
+      <div className="teams-container">
+        {teams.length > 0 ? (
+          <div className="teams">
+            {teams.map((team) => (
+              <Team key={team.id} team={team} />
+            ))}
+          </div>
+        ) : (
+          "No teams match your current filters"
+        )}
+      </div>
     </div>
   );
 }

@@ -12,8 +12,6 @@
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    height: 80%;
-    width: 80%;
     background-color: #3e4c54;
     color: white;
 }
