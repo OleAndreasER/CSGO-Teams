@@ -1,26 +1,19 @@
-import { useTeams } from "../teams/use-teams";
 import Team from "../teams/team";
 import "./mainpage.css";
-import { PlayerData, TeamData } from "../teams/teams";
 import { useEffect, useState } from "react";
 import TeamNavigation from "./team-navigation/team-navigation";
+import useSortedTeams from "../teams/use-sorted-teams";
 
 export default function Mainpage() {
-  const teamsFromAPI = useTeams();
-
   const [sortOption, setSortOption] = useState<string>("");
   const [selectedCountry, setSelectedCountry] = useState<string>("");
   const [showInternational, setShowInternational] = useState<boolean>(true);
-  const [teams, setTeams] = useState<TeamData[]>([]);
-  const [countries, setCountries] = useState<string[]>([]);
-  const [countryTeamLUT, setCountryTeamLUT] = useState<Map<string, TeamData[]>>(
-    new Map()
+  const { teams, countries } = useSortedTeams(
+    selectedCountry,
+    showInternational,
+    sortOption
   );
   const [displayedTeamIndex, setDisplayedTeamIndex] = useState<number>(0);
-
-  function allEqualCountries(arr: string[]) {
-    return arr.every((v) => v === arr[0]);
-  }
 
   function handleChangeSort(newSortOption: string) {
     // Set the sort option state to the new sort option and update the session storage
@@ -63,88 +56,16 @@ export default function Mainpage() {
   }, []);
 
   useEffect(() => {
-    if (teamsFromAPI !== undefined) {
-      const teamsWithPlayersFromCountry: Map<string, TeamData[]> = new Map();
-      // Iterate over all teams
-      for (let i = 0; i < teamsFromAPI.length; i++) {
-        const players: PlayerData[] = teamsFromAPI[i].players;
-        // Iterate over all players in the team
-        for (let j = 0; j < players.length; j++) {
-          const country = players[j].country.name;
-          // If the country is already in the map, add the team to the array of teams from that country if it isn't already there
-          if (teamsWithPlayersFromCountry.has(country)) {
-            if (
-              !teamsWithPlayersFromCountry
-                .get(country)
-                ?.includes(teamsFromAPI[i])
-            ) {
-              teamsWithPlayersFromCountry.get(country)?.push(teamsFromAPI[i]);
-            }
-          } else {
-            // If the country isn't in the map, add it with an array containing the team as the value
-            teamsWithPlayersFromCountry.set(country, [teamsFromAPI[i]]);
-          }
-        }
-      }
-      // Set the teamsWithPlayersFromCountry state to the map
-      setCountryTeamLUT(teamsWithPlayersFromCountry);
-
-      // Set the countries state to the keys of the map (the countries) sorted alphabetically
-      setCountries(Array.from(teamsWithPlayersFromCountry.keys()).sort());
-    }
-  }, [teamsFromAPI]);
-
-  useEffect(() => {
-    if (teamsFromAPI !== undefined) {
-      let teamsCopy: TeamData[] = [];
-      if (selectedCountry !== "") {
-        // If a country is selected, set teamsCopy to (a copy of) the array of teams from that country
-        teamsCopy = [...(countryTeamLUT.get(selectedCountry) ?? [])];
-      } else {
-        // If no country is selected, set the teamsCopy to (a copy of) the original array of teams
-        teamsCopy = [...teamsFromAPI];
-      }
-
-      // If the showInternational checkbox is not checked, filter out international teams
-      if (!showInternational) {
-        teamsCopy = teamsCopy.filter((team) =>
-          allEqualCountries(team.players.map((player) => player.country.name))
-        );
-      }
-
-      // Sort the teams according to the selected sort option
-      switch (sortOption) {
-        case "rank-ascending":
-          teamsCopy.sort((a, b) => a.ranking - b.ranking);
-          break;
-        case "rank-descending":
-          teamsCopy.sort((a, b) => b.ranking - a.ranking);
-          break;
-        case "name-a-z":
-          teamsCopy.sort((a, b) => a.name.localeCompare(b.name));
-          break;
-        case "name-z-a":
-          teamsCopy.sort((a, b) => b.name.localeCompare(a.name));
-          break;
-      }
-      setDisplayedTeamIndex(0);
-      setTeams(teamsCopy);
-    }
-  }, [
-    sortOption,
-    selectedCountry,
-    teamsFromAPI,
-    countryTeamLUT,
-    showInternational,
-  ]);
-
-  console.log(displayedTeamIndex)
+    setDisplayedTeamIndex(0);
+  }, [sortOption, selectedCountry, showInternational]);
 
   return (
     <div className="body">
       <div className="filter-and-sort">
         <div className="sort">
-          <label className="label" htmlFor="sort">Sort options: </label>
+          <label className="label" htmlFor="sort">
+            Sort options:{" "}
+          </label>
           <select
             className="dropdown"
             value={sortOption}
@@ -160,7 +81,9 @@ export default function Mainpage() {
         </div>
         <div className="filter">
           <div className="country-select">
-            <label className="label" htmlFor="sort">Filter by country: </label>
+            <label className="label" htmlFor="sort">
+              Filter by country:{" "}
+            </label>
             <select
               className="dropdown"
               value={selectedCountry}
@@ -177,7 +100,9 @@ export default function Mainpage() {
             </select>
           </div>
           <div className="international">
-            <label className="label" htmlFor="international">Show international teams: </label>
+            <label className="label" htmlFor="international">
+              Show international teams:{" "}
+            </label>
             <input
               checked={showInternational}
               type="checkbox"
@@ -203,7 +128,6 @@ export default function Mainpage() {
           "No teams match your current filters"
         )}
       </div>
-      
     </div>
   );
 }
