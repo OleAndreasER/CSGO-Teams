@@ -1,0 +1,58 @@
+.filter-and-sort {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.sort {
+  margin: auto 0 auto 0;
+}
+
+.dropdown {
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 5px;
+  color: white;
+  background-color: #3e4c54;
+  padding: 5px 10px;
+  font-size: 12pt;
+}
+
+.label {
+  font-size: 12pt;
+}
+
+.solid {
+  margin-top: 20px;
+  border-top: 1px solid black;
+  max-width: 80%;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#international {
+  width: 20px;
+  height: 20px;
+  accent-color: #3e4c54;
+  border: 1px solid black;
+}
+
+@media only screen and (max-width: 565px) {
+  .filter-and-sort {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+.teams-container {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}

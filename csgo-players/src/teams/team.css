@@ -30,8 +30,6 @@ body {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    height: var(--screen-height);
-    width: var(--screen-width);
     background-color: #3e4c54;
     color: white;
     min-width: 300px; /* Hardcoded as no smartphones with smaller than 320 px screen size */
