@@ -65,7 +65,7 @@ export default function Mainpage() {
       setShowInternational(JSON.parse(showInternationalFromSessionStorage));
     }
     const showFavoriteFromSessionStorage =
-    sessionStorage.getItem("showFavorite");
+      sessionStorage.getItem("showFavorite");
     if (showFavoriteFromSessionStorage !== null) {
       setShowFavorite(JSON.parse(showFavoriteFromSessionStorage));
     }
