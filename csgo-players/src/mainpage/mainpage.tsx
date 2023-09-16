@@ -8,10 +8,13 @@ export default function Mainpage() {
   const [sortOption, setSortOption] = useState<string>("");
   const [selectedCountry, setSelectedCountry] = useState<string>("");
   const [showInternational, setShowInternational] = useState<boolean>(true);
+  const [showFavorite, setShowFavorite] = useState<boolean>(true);
+
   const { teams, countries } = useSortedTeams(
     selectedCountry,
     showInternational,
-    sortOption
+    sortOption,
+    showFavorite
   );
   const [displayedTeamIndex, setDisplayedTeamIndex] = useState<number>(0);
 
@@ -36,6 +39,14 @@ export default function Mainpage() {
     );
   }
 
+  function handleChangeFavorite(newShowFavorite: boolean){
+    setShowFavorite(newShowFavorite)
+    sessionStorage.setItem(
+      "showFavorite",
+      newShowFavorite.toString()
+    );
+  }
+
   useEffect(() => {
     // Load the sort option, selected country and show international from session storage
     // and set the state to the values from session storage if they exist
@@ -53,11 +64,16 @@ export default function Mainpage() {
     if (showInternationalFromSessionStorage !== null) {
       setShowInternational(JSON.parse(showInternationalFromSessionStorage));
     }
+    const showFavoriteFromSessionStorage=
+    sessionStorage.getItem("showFavorite");
+    if (showFavoriteFromSessionStorage !== null) {
+      setShowFavorite(JSON.parse(showFavoriteFromSessionStorage));
+    }
   }, []);
 
   useEffect(() => {
     setDisplayedTeamIndex(0);
-  }, [sortOption, selectedCountry, showInternational]);
+  }, [sortOption, selectedCountry, showInternational,showFavorite]);
 
   return (
     <div className="body">
@@ -82,15 +98,15 @@ export default function Mainpage() {
 
 
         <div className="filter-favorite">
-          <label className="label" htmlFor="international">
+          <label className="label" htmlFor="favorite">
             Show favorite teams:{" "}
           </label>
           <input
-            checked={showInternational}
+            checked={showFavorite}
             type="checkbox"
-            name="international"
-            id="international"
-            onChange={(e) => handleChangeInternational(e.target.checked)}
+            name="favorite"
+            id="favorite"
+            onChange={(e) => handleChangeFavorite(e.target.checked)}
           />
         </div>
 
