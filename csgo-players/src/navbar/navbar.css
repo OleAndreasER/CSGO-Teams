@@ -1,12 +1,13 @@
 .nav {
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
 .nav-logo {
   margin-top: 6px;
   margin-left: 10px;
-  width: 100px;
+  width: 120px;
 }
 
 

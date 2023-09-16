@@ -44,7 +44,7 @@ body {
     margin-right: auto;
 }
 
-.logo-name {
+.logo-name-and-star {
     margin-top: 2vh;
     margin-bottom: 2vh;
     display: flex;
@@ -53,6 +53,7 @@ body {
     align-items: center;
     margin-top: auto;
     margin-bottom: auto;
+    position: relative;
 }
 
 .ranking {
@@ -70,6 +71,14 @@ body {
 .team-name {
     margin-right: auto;
     margin-left: 1%;
+}
+
+.favorite-star{
+    position: absolute;
+    margin-top: 1em;
+    right: 1em;
+    color: yellow;
+    cursor: pointer;
 }
 
 /* 768 px */
