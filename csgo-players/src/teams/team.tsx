@@ -1,6 +1,7 @@
 import "./team.css";
 import { TeamData } from "./teams";
 import Player from "./player";
+import { AiOutlineStar } from "react-icons/ai";
 
 interface TeamProps {
   team: TeamData;
@@ -17,10 +18,11 @@ export default function Team({
   return (
     <div className="team" id="team">
         <div className="team-header">
-            <div className="logo-name">
-                <img src={logo} className="logo-image" id="logo-image" />
-                <h1 className="team-name">{teamName}</h1>
-            </div>
+              <div className="logo-name-and-star">
+                  <img src={logo} className="logo-image" id="logo-image" />
+                  <h1 className="team-name">{teamName}</h1>
+              <AiOutlineStar size={40} className="favorite-star"/>
+              </div>
             <p className="ranking">Rank: {ranking} </p>
         </div>
          <div className="players"> 

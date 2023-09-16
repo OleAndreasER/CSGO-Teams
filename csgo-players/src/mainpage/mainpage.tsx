@@ -79,6 +79,22 @@ export default function Mainpage() {
             <option value="name-z-a">By team name (z-a)</option>
           </select>
         </div>
+
+
+        <div className="filter-favorite">
+          <label className="label" htmlFor="international">
+            Show favorite teams:{" "}
+          </label>
+          <input
+            checked={showInternational}
+            type="checkbox"
+            name="international"
+            id="international"
+            onChange={(e) => handleChangeInternational(e.target.checked)}
+          />
+        </div>
+
+
         <div className="filter">
           <div className="country-select">
             <label className="label" htmlFor="sort">
