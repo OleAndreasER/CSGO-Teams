@@ -1,7 +1,7 @@
 import "./team.css";
 import { TeamData } from "./teams";
 import Player from "./player";
-import { AiOutlineStar } from "react-icons/ai";
+import { AiOutlineStar,AiFillStar } from "react-icons/ai";
 import { useContext } from "react";
 import { FavoritesContext } from "../favorites/favorites-provider";
 
@@ -21,15 +21,19 @@ export default function Team({
   },
 }: TeamProps) {
 
-  const { toggleFavorite } = useContext(FavoritesContext);
-  
+  const { isFavorite, toggleFavorite } = useContext(FavoritesContext);
+
   return (
     <div className="team" id="team">
         <div className="team-header">
               <div className="logo-name-and-star">
                   <img src={logo} className="logo-image" id="logo-image" />
                   <h1 className="team-name">{teamName}</h1>
-              <AiOutlineStar size={40} className="favorite-star" onClick={() => toggleFavorite(team)}/>
+                  <div>
+                    {isFavorite(team)
+                      ? <AiFillStar size={40} className="favorite-star" onClick={() => toggleFavorite(team)}/>
+                      : <AiOutlineStar size={40} className="favorite-star" onClick={() => toggleFavorite(team)}/>}
+                  </div>
               </div>
             <p className="ranking">Rank: {ranking} </p>
         </div>

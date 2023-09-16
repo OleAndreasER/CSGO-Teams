@@ -6,10 +6,6 @@
   margin: 0 auto;
 }
 
-.sort {
-  margin: auto 0 auto 0;
-}
-
 .dropdown {
   background-color: transparent;
   border: 2px solid black;
@@ -37,6 +33,13 @@
 }
 
 #international {
+  width: 20px;
+  height: 20px;
+  accent-color: #3e4c54;
+  border: 1px solid black;
+}
+
+#favorite {
   width: 20px;
   height: 20px;
   accent-color: #3e4c54;

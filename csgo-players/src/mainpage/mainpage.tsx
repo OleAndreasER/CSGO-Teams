@@ -8,7 +8,7 @@ export default function Mainpage() {
   const [sortOption, setSortOption] = useState<string>("");
   const [selectedCountry, setSelectedCountry] = useState<string>("");
   const [showInternational, setShowInternational] = useState<boolean>(true);
-  const [showFavorite, setShowFavorite] = useState<boolean>(true);
+  const [showFavorite, setShowFavorite] = useState<boolean>(false);
 
   const { teams, countries } = useSortedTeams(
     selectedCountry,
@@ -64,7 +64,7 @@ export default function Mainpage() {
     if (showInternationalFromSessionStorage !== null) {
       setShowInternational(JSON.parse(showInternationalFromSessionStorage));
     }
-    const showFavoriteFromSessionStorage=
+    const showFavoriteFromSessionStorage =
     sessionStorage.getItem("showFavorite");
     if (showFavoriteFromSessionStorage !== null) {
       setShowFavorite(JSON.parse(showFavoriteFromSessionStorage));
@@ -95,22 +95,17 @@ export default function Mainpage() {
             <option value="name-z-a">By team name (z-a)</option>
           </select>
         </div>
-
-
-        <div className="filter-favorite">
+        <div className="favorite">
           <label className="label" htmlFor="favorite">
             Show favorite teams:{" "}
           </label>
           <input
-            checked={showFavorite}
             type="checkbox"
             name="favorite"
             id="favorite"
             onChange={(e) => handleChangeFavorite(e.target.checked)}
           />
         </div>
-
-
         <div className="filter">
           <div className="country-select">
             <label className="label" htmlFor="sort">
