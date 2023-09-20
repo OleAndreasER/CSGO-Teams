@@ -1,9 +1,46 @@
-.filter-and-sort {
+.options {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  gap: 10px;
   max-width: 80%;
   margin: 0 auto;
+}
+
+.filter-and-sort {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: row;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  gap: 5px;
+}
+
+
+.select {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 5px;
+}
+
+.label > p {
+  margin: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 1em
+}
+
+.country-select.dropdown {
+  margin-left: 20px;
 }
 
 .dropdown {
@@ -16,22 +53,11 @@
   font-size: 12pt;
 }
 
-.label {
-  font-size: 12pt;
-}
-
 .solid {
   margin-top: 20px;
   border-top: 1px solid black;
   max-width: 80%;
 }
-
-.filter {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
 #international {
   width: 20px;
   height: 20px;
@@ -46,12 +72,13 @@
   border: 1px solid black;
 }
 
-@media only screen and (max-width: 565px) {
-  .filter-and-sort {
+@media only screen and (max-width: 768px) {
+  .options {
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    gap: 10px;
   }
+
+ 
 }
 
 .teams-container {

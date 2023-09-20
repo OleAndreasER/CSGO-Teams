@@ -77,12 +77,28 @@ export default function Mainpage() {
 
   return (
     <div className="body">
-      <div className="filter-and-sort">
-        <div className="sort">
-          <label className="label" htmlFor="sort">
-            Sort options:{" "}
-          </label>
-          <select
+      <div className="options">
+        <div className="filter-and-sort">
+          <div className="label">
+              <p>Filter by country: </p>
+              <p>Sort options: </p>
+          </div>
+          <div className="select">
+            <select
+                className="dropdown"
+                value={selectedCountry}
+                name="country"
+                id="country"
+                onChange={(e) => handleChangeCountry(e.target.value)}
+              >
+            <option value="">All countries</option>
+              {countries.map((country) => (
+                <option key={country} value={country}>
+                  {country}
+                </option>
+              ))}
+            </select>
+            <select
             className="dropdown"
             value={sortOption}
             name="sort"
@@ -94,51 +110,29 @@ export default function Mainpage() {
             <option value="name-a-z">By team name (a-z)</option>
             <option value="name-z-a">By team name (z-a)</option>
           </select>
-        </div>
-        <div className="favorite">
-          <label className="label" htmlFor="favorite">
-            Show favorite teams:{" "}
-          </label>
-          <input
-            type="checkbox"
-            name="favorite"
-            id="favorite"
-            checked={showFavorite}
-            onChange={(e) => handleChangeFavorite(e.target.checked)}
-          />
-        </div>
-        <div className="filter">
-          <div className="country-select">
-            <label className="label" htmlFor="sort">
-              Filter by country:{" "}
-            </label>
-            <select
-              className="dropdown"
-              value={selectedCountry}
-              name="country"
-              id="country"
-              onChange={(e) => handleChangeCountry(e.target.value)}
-            >
-              <option value="">All countries</option>
-              {countries.map((country) => (
-                <option key={country} value={country}>
-                  {country}
-                </option>
-              ))}
-            </select>
           </div>
-          <div className="international">
-            <label className="label" htmlFor="international">
-              Show international teams:{" "}
-            </label>
-            <input
-              checked={showInternational}
-              type="checkbox"
-              name="international"
-              id="international"
-              onChange={(e) => handleChangeInternational(e.target.checked)}
-            />
-          </div>
+        </div>
+        <div className="checkboxes">
+            <div className="label">
+                <p>Show international teams: </p>
+                <p>Show only favorite teams: </p>
+            </div>
+            <div className="select">    
+              <input
+                checked={showInternational}
+                type="checkbox"
+                name="international"
+                id="international"
+                onChange={(e) => handleChangeInternational(e.target.checked)}
+              />
+              <input
+                type="checkbox"
+                name="favorite"
+                id="favorite"
+                checked={showFavorite}
+                onChange={(e) => handleChangeFavorite(e.target.checked)}
+              />
+            </div>
         </div>
       </div>
       <hr className="solid" />
