@@ -103,6 +103,7 @@ export default function Mainpage() {
             type="checkbox"
             name="favorite"
             id="favorite"
+            checked={showFavorite}
             onChange={(e) => handleChangeFavorite(e.target.checked)}
           />
         </div>
