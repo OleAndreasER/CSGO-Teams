@@ -31,8 +31,8 @@ export default function Team({
                   <h1 className="team-name">{teamName}</h1>
                   <div>
                     {isFavorite(team)
-                      ? <AiFillStar size={40} className="favorite-star" onClick={() => toggleFavorite(team)}/>
-                      : <AiOutlineStar size={40} className="favorite-star" onClick={() => toggleFavorite(team)}/>}
+                      ? <AiFillStar size={40} data-testid="fill-star" className="favorite-star" onClick={() => toggleFavorite(team)}/>
+                      : <AiOutlineStar size={40} data-testid="outline-star" className="favorite-star" onClick={() => toggleFavorite(team)}/>}
                   </div>
               </div>
             <p className="ranking">Rank: {ranking} </p>
