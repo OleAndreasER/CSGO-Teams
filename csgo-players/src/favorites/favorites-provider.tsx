@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { TeamData } from "../teams/teams";
+import { TeamData } from "../team/team-data";
 
 interface FavoritesContextValue {
   isFavorite: (team: TeamData) => boolean;

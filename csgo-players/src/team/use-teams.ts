@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { TeamData } from "./teams";
+import TeamData from "./team-data";
 
 export const useTeams = (): TeamData[] | undefined =>
   useQuery<TeamData[]>({

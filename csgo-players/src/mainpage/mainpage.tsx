@@ -1,8 +1,8 @@
-import Team from "../teams/team";
+import Team from "../team/team";
 import "./mainpage.css";
 import { useEffect, useState } from "react";
 import TeamNavigation from "./team-navigation/team-navigation";
-import useSortedTeams from "../teams/use-sorted-teams";
+import useSortedTeams from "../team/use-sorted-teams";
 
 export default function Mainpage() {
   const [sortOption, setSortOption] = useState<string>("");
