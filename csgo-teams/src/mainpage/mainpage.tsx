@@ -39,12 +39,9 @@ export default function Mainpage() {
     );
   }
 
-  function handleChangeFavorite(newShowFavorite: boolean){
-    setShowFavorite(newShowFavorite)
-    sessionStorage.setItem(
-      "showFavorite",
-      newShowFavorite.toString()
-    );
+  function handleChangeFavorite(newShowFavorite: boolean) {
+    setShowFavorite(newShowFavorite);
+    sessionStorage.setItem("showFavorite", newShowFavorite.toString());
   }
 
   useEffect(() => {
@@ -73,45 +70,17 @@ export default function Mainpage() {
 
   useEffect(() => {
     setDisplayedTeamIndex(0);
-  }, [sortOption, selectedCountry, showInternational,showFavorite]);
+  }, [sortOption, selectedCountry, showInternational, showFavorite]);
 
   return (
     <div className="body">
-      <div className="filter-and-sort">
-        <div className="sort">
-          <label className="label" htmlFor="sort">
-            Sort options:{" "}
-          </label>
-          <select
-            className="dropdown"
-            value={sortOption}
-            name="sort"
-            id="sort"
-            onChange={(e) => handleChangeSort(e.target.value)}
-          >
-            <option value="rank-ascending">By rank (ascending)</option>
-            <option value="rank-descending">By rank (descending)</option>
-            <option value="name-a-z">By team name (a-z)</option>
-            <option value="name-z-a">By team name (z-a)</option>
-          </select>
-        </div>
-        <div className="favorite">
-          <label className="label" htmlFor="favorite">
-            Show favorite teams:{" "}
-          </label>
-          <input
-            type="checkbox"
-            name="favorite"
-            id="favorite"
-            checked={showFavorite}
-            onChange={(e) => handleChangeFavorite(e.target.checked)}
-          />
-        </div>
-        <div className="filter">
-          <div className="country-select">
-            <label className="label" htmlFor="sort">
-              Filter by country:{" "}
-            </label>
+      <div className="options">
+        <div className="filter-and-sort">
+          <div className="label">
+            <p>Filter by country: </p>
+            <p>Sort options: </p>
+          </div>
+          <div className="select">
             <select
               className="dropdown"
               value={selectedCountry}
@@ -126,17 +95,39 @@ export default function Mainpage() {
                 </option>
               ))}
             </select>
+            <select
+              className="dropdown"
+              value={sortOption}
+              name="sort"
+              id="sort"
+              onChange={(e) => handleChangeSort(e.target.value)}
+            >
+              <option value="rank-ascending">By rank (ascending)</option>
+              <option value="rank-descending">By rank (descending)</option>
+              <option value="name-a-z">By team name (a-z)</option>
+              <option value="name-z-a">By team name (z-a)</option>
+            </select>
           </div>
-          <div className="international">
-            <label className="label" htmlFor="international">
-              Show international teams:{" "}
-            </label>
+        </div>
+        <div className="checkboxes">
+          <div className="label">
+            <p>Show international teams: </p>
+            <p>Show only favorite teams: </p>
+          </div>
+          <div className="select">
             <input
               checked={showInternational}
               type="checkbox"
               name="international"
               id="international"
               onChange={(e) => handleChangeInternational(e.target.checked)}
+            />
+            <input
+              type="checkbox"
+              name="favorite"
+              id="favorite"
+              checked={showFavorite}
+              onChange={(e) => handleChangeFavorite(e.target.checked)}
             />
           </div>
         </div>
