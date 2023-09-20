@@ -83,20 +83,22 @@ export default function Mainpage() {
           <div className="select">
             <select
               className="dropdown"
+              data-testid="selected-country-dropdown"
               value={selectedCountry}
               name="country"
               id="country"
               onChange={(e) => handleChangeCountry(e.target.value)}
             >
-              <option value="">All countries</option>
+              <option value="" data-testid="country-select-option">All countries</option>
               {countries.map((country) => (
-                <option key={country} value={country}>
+                <option key={country} value={country} data-testid="country-select-option">
                   {country}
                 </option>
               ))}
             </select>
             <select
               className="dropdown"
+              data-testid="sort-option-dropdown"
               value={sortOption}
               name="sort"
               id="sort"
@@ -116,6 +118,7 @@ export default function Mainpage() {
           </div>
           <div className="select">
             <input
+              data-testid="international-checkbox"
               checked={showInternational}
               type="checkbox"
               name="international"
@@ -123,6 +126,7 @@ export default function Mainpage() {
               onChange={(e) => handleChangeInternational(e.target.checked)}
             />
             <input
+              data-testid="favorite-checkbox"
               type="checkbox"
               name="favorite"
               id="favorite"
@@ -133,7 +137,7 @@ export default function Mainpage() {
         </div>
       </div>
       <hr className="solid" />
-      <div className="teams-container">
+      <div className="teams-container" data-testid="teams">
         {teams.length > 0 ? (
           <div>
             <Team team={teams[displayedTeamIndex]} />
