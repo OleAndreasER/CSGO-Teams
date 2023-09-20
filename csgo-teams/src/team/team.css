@@ -33,7 +33,7 @@ body {
     border-radius: 10px;
     background-color: #3e4c54;
     color: white;
-    min-width: 300px;
+    min-width: 240px;
     /* Hardcoded as no smartphones with smaller than 320 px screen size */
 }
 
