@@ -4,6 +4,7 @@ body {
     --logo-size: 50px;
     --player-width: 20%;
 }
+
 .players {
     display: flex;
     flex-direction: row;
@@ -13,7 +14,7 @@ body {
     min-height: 300px;
 }
 
-.players > div {
+.players>div {
     width: var(--player-width);
     margin-right: 10px;
 }
@@ -32,7 +33,8 @@ body {
     border-radius: 10px;
     background-color: #3e4c54;
     color: white;
-    min-width: 300px; /* Hardcoded as no smartphones with smaller than 320 px screen size */
+    min-width: 300px;
+    /* Hardcoded as no smartphones with smaller than 320 px screen size */
 }
 
 .team-header {
@@ -73,7 +75,7 @@ body {
     margin-left: 1%;
 }
 
-.favorite-star{
+.favorite-star {
     position: absolute;
     margin-top: 1em;
     right: 1em;
@@ -96,7 +98,7 @@ body {
     body {
         --player-width: 100%;
     }
-   
+
 }
 
 @media only screen and (max-width: 450px) {

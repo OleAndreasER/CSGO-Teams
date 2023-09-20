@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useTeams } from "./use-teams";
-import { PlayerData, TeamData } from "./teams";
-
+import PlayerData from "../player/player-data";
+import TeamData from "./team-data";
 import { FavoritesContext } from "../favorites/favorites-provider";
 import { useContext } from "react";
-
 
 export default function useSortedTeams(
   selectedCountry: string,
@@ -78,9 +77,7 @@ export default function useSortedTeams(
       }
 
       if (showFavorite) {
-        teamsCopy = teamsCopy.filter((team) =>
-          isFavorite(team)
-        );
+        teamsCopy = teamsCopy.filter((team) => isFavorite(team));
       }
 
       // Sort the teams according to the selected sort option
@@ -107,6 +104,7 @@ export default function useSortedTeams(
     showInternational,
     showFavorite,
     teamsWithPlayersFromCountry,
+    isFavorite,
   ]);
 
   return { teams, countries };

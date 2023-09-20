@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { describe, expect, test } from "vitest";
-import { PlayerData } from "./teams";
+import PlayerData from "./player-data";
 import Player from "./player";
 
 const mockData1: PlayerData = {
@@ -50,9 +50,9 @@ describe("Player", () => {
 
     expect(fullnames).toHaveLength(2);
 
-    // Checks to see if the names are rendered correctly. 
-    // This is done because the fullname retrieved from the API contains the nickname in quotation marks, 
-    // we therefore have to remove the nickname from the fullname, 
+    // Checks to see if the names are rendered correctly.
+    // This is done because the fullname retrieved from the API contains the nickname in quotation marks,
+    // we therefore have to remove the nickname from the fullname,
     // while still retaining the rest of the names.
     expect(fullnames[0].textContent).toMatch("Oleksandr Kostyliev");
     expect(fullnames[1].textContent).toMatch("Russel Van Dulken");

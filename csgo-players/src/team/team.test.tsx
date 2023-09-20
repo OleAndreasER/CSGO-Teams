@@ -1,7 +1,8 @@
 import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { describe, expect, test } from "vitest";
-import { PlayerData, TeamData } from "./teams";
+import TeamData from "./team-data";
+import PlayerData from "../player/player-data";
 import Team from "./team";
 import { FavoritesProvider } from "../favorites/favorites-provider";
 
@@ -14,11 +15,11 @@ const playerData1: PlayerData = {
 };
 
 const playerData4: PlayerData = {
-    fullname: "Mathieu Herbaut",
-    image: "",
-    nickname: "ZywOo",
-    country: { name: "France", flag: "" },
-  };
+  fullname: "Mathieu Herbaut",
+  image: "",
+  nickname: "ZywOo",
+  country: { name: "France", flag: "" },
+};
 
 const playerData2: PlayerData = {
   fullname: "Lotan Giladi",
@@ -28,20 +29,20 @@ const playerData2: PlayerData = {
 };
 
 const playerData3: PlayerData = {
-    fullname: "Emil Reif",
-    image: "",
-    nickname: "Magisk",
-    country: { name: "Denmark", flag: "" },
+  fullname: "Emil Reif",
+  image: "",
+  nickname: "Magisk",
+  country: { name: "Denmark", flag: "" },
 };
 
 const playerData5: PlayerData = {
-    fullname: "Peter Rasmussen",
-    image: "",
-    nickname: "dupreeh",
-    country: { name: "Denmark", flag: "" },
+  fullname: "Peter Rasmussen",
+  image: "",
+  nickname: "dupreeh",
+  country: { name: "Denmark", flag: "" },
 };
 
-const playerArray: PlayerData[] = []
+const playerArray: PlayerData[] = [];
 playerArray[0] = playerData1;
 playerArray[1] = playerData2;
 playerArray[2] = playerData3;
@@ -49,18 +50,18 @@ playerArray[3] = playerData4;
 playerArray[4] = playerData5;
 
 const teamData: TeamData = {
-    id: 9565,
-    ranking: 1,
-    name: "Vitality",
-    logo: "",
-    players: playerArray
-}
+  id: 9565,
+  ranking: 1,
+  name: "Vitality",
+  logo: "",
+  players: playerArray,
+};
 
 describe("Team", () => {
   test("Team component rendered correctly", () => {
     const { container } = render(
       <FavoritesProvider>
-           <Team team={teamData} />
+        <Team team={teamData} />
       </FavoritesProvider>
     );
 
@@ -74,9 +75,10 @@ describe("Team", () => {
     expect(container.querySelector(".logo-name-and-star")).toBeInTheDocument();
     expect(container.querySelector(".favorite-star")).toBeInTheDocument();
     expect(container.querySelector(".players")).toBeInTheDocument();
-    
+
     // Check that the team logo and name are present inside their container
-    const children = container.querySelector(".logo-name-and-star")?.childNodes || [];
+    const children =
+      container.querySelector(".logo-name-and-star")?.childNodes || [];
     expect(children).toHaveLength(3);
     expect(children[0]).toHaveClass("logo-image");
     expect(children[1]).toHaveClass("team-name");
@@ -85,7 +87,7 @@ describe("Team", () => {
   test("Correct data in team and player components", () => {
     const { container } = render(
       <FavoritesProvider>
-           <Team team={teamData} />
+        <Team team={teamData} />
       </FavoritesProvider>
     );
 
@@ -94,11 +96,13 @@ describe("Team", () => {
     const playersNicknames = container.querySelectorAll(".player-nickname");
     const playersNames = container.querySelectorAll(".player-fullname");
     const playersCountries = container.querySelectorAll(".player-country-name");
-    expect(players).toHaveLength(5);     
+    expect(players).toHaveLength(5);
     for (let i = 0; i < 5; i++) {
-        expect(playersNicknames[i]).toHaveTextContent(playerArray[i].nickname);
-        expect(playersNames[i]).toHaveTextContent(playerArray[i].fullname);
-        expect(playersCountries[i]).toHaveTextContent(playerArray[i].country.name);
+      expect(playersNicknames[i]).toHaveTextContent(playerArray[i].nickname);
+      expect(playersNames[i]).toHaveTextContent(playerArray[i].fullname);
+      expect(playersCountries[i]).toHaveTextContent(
+        playerArray[i].country.name
+      );
     }
 
     // Check that team name and ranking elements display correct data
@@ -109,7 +113,7 @@ describe("Team", () => {
   test("Favorite icon functionality", () => {
     const { container, getByTestId } = render(
       <FavoritesProvider>
-           <Team team={teamData} />
+        <Team team={teamData} />
       </FavoritesProvider>
     );
 
@@ -117,7 +121,7 @@ describe("Team", () => {
     let starElement = container.querySelectorAll(".favorite-star");
     expect(starElement).toHaveLength(1);
 
-    // Check initial state set as unfavorited 
+    // Check initial state set as unfavorited
     expect(getByTestId("outline-star")).toBeInTheDocument();
 
     // Check that clicking favorite icon changes UI element

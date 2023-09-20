@@ -1,5 +1,5 @@
 import "./player.css";
-import { PlayerData } from "./teams";
+import PlayerData from "./player-data";
 
 interface PlayerProps {
   player: PlayerData;
@@ -13,7 +13,6 @@ export default function Player({
     country: { name: countryName, flag: countryFlagImage },
   },
 }: PlayerProps) {
-  
   // Remove the nickname from the fullname
   const fullname: string = fullnameWithNickname
     .split(" ")
