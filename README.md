@@ -29,6 +29,6 @@ Installer og kjør med npm:
 ## Testing
 
 For å teste, kjør `npm test` i csgo-teams mappen.  
-Vi har fått testet TeamNavigation, Team, Player og MainPage med Vitest.
+Vi har fått testet TeamNavigation, Team, Player og Mainpage med Vitest.
 Vi har en snaphot test av hele appen.  
 Vi har prøvd nettsiden på Firefox, Edge og Chrome på PC; Safari, Chrome og Firefox på mobil; Safari på iPad - alt ser ut til å være greit.
