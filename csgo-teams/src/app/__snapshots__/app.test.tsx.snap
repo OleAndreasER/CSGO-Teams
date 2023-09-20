@@ -18,74 +18,24 @@ exports[`Snapshot test > Test whether app matches snapshot 1`] = `
         class="body"
       >
         <div
-          class="filter-and-sort"
+          class="options"
         >
           <div
-            class="sort"
-          >
-            <label
-              class="label"
-              for="sort"
-            >
-              Sort options:
-               
-            </label>
-            <select
-              class="dropdown"
-              id="sort"
-              name="sort"
-            >
-              <option
-                value="rank-ascending"
-              >
-                By rank (ascending)
-              </option>
-              <option
-                value="rank-descending"
-              >
-                By rank (descending)
-              </option>
-              <option
-                value="name-a-z"
-              >
-                By team name (a-z)
-              </option>
-              <option
-                value="name-z-a"
-              >
-                By team name (z-a)
-              </option>
-            </select>
-          </div>
-          <div
-            class="favorite"
-          >
-            <label
-              class="label"
-              for="favorite"
-            >
-              Show favorite teams:
-               
-            </label>
-            <input
-              id="favorite"
-              name="favorite"
-              type="checkbox"
-            />
-          </div>
-          <div
-            class="filter"
+            class="filter-and-sort"
           >
             <div
-              class="country-select"
+              class="label"
             >
-              <label
-                class="label"
-                for="sort"
-              >
-                Filter by country:
-                 
-              </label>
+              <p>
+                Filter by country: 
+              </p>
+              <p>
+                Sort options: 
+              </p>
+            </div>
+            <div
+              class="select"
+            >
               <select
                 class="dropdown"
                 id="country"
@@ -97,21 +47,59 @@ exports[`Snapshot test > Test whether app matches snapshot 1`] = `
                   All countries
                 </option>
               </select>
+              <select
+                class="dropdown"
+                id="sort"
+                name="sort"
+              >
+                <option
+                  value="rank-ascending"
+                >
+                  By rank (ascending)
+                </option>
+                <option
+                  value="rank-descending"
+                >
+                  By rank (descending)
+                </option>
+                <option
+                  value="name-a-z"
+                >
+                  By team name (a-z)
+                </option>
+                <option
+                  value="name-z-a"
+                >
+                  By team name (z-a)
+                </option>
+              </select>
+            </div>
+          </div>
+          <div
+            class="checkboxes"
+          >
+            <div
+              class="label"
+            >
+              <p>
+                Show international teams: 
+              </p>
+              <p>
+                Show only favorite teams: 
+              </p>
             </div>
             <div
-              class="international"
+              class="select"
             >
-              <label
-                class="label"
-                for="international"
-              >
-                Show international teams:
-                 
-              </label>
               <input
                 checked=""
                 id="international"
                 name="international"
+                type="checkbox"
+              />
+              <input
+                id="favorite"
+                name="favorite"
                 type="checkbox"
               />
             </div>
@@ -142,74 +130,24 @@ exports[`Snapshot test > Test whether app matches snapshot 1`] = `
       class="body"
     >
       <div
-        class="filter-and-sort"
+        class="options"
       >
         <div
-          class="sort"
-        >
-          <label
-            class="label"
-            for="sort"
-          >
-            Sort options:
-             
-          </label>
-          <select
-            class="dropdown"
-            id="sort"
-            name="sort"
-          >
-            <option
-              value="rank-ascending"
-            >
-              By rank (ascending)
-            </option>
-            <option
-              value="rank-descending"
-            >
-              By rank (descending)
-            </option>
-            <option
-              value="name-a-z"
-            >
-              By team name (a-z)
-            </option>
-            <option
-              value="name-z-a"
-            >
-              By team name (z-a)
-            </option>
-          </select>
-        </div>
-        <div
-          class="favorite"
-        >
-          <label
-            class="label"
-            for="favorite"
-          >
-            Show favorite teams:
-             
-          </label>
-          <input
-            id="favorite"
-            name="favorite"
-            type="checkbox"
-          />
-        </div>
-        <div
-          class="filter"
+          class="filter-and-sort"
         >
           <div
-            class="country-select"
+            class="label"
           >
-            <label
-              class="label"
-              for="sort"
-            >
-              Filter by country:
-               
-            </label>
+            <p>
+              Filter by country: 
+            </p>
+            <p>
+              Sort options: 
+            </p>
+          </div>
+          <div
+            class="select"
+          >
             <select
               class="dropdown"
               id="country"
@@ -221,120 +159,6 @@ exports[`Snapshot test > Test whether app matches snapshot 1`] = `
                 All countries
               </option>
             </select>
-          </div>
-          <div
-            class="international"
-          >
-            <label
-              class="label"
-              for="international"
-            >
-              Show international teams:
-               
-            </label>
-            <input
-              checked=""
-              id="international"
-              name="international"
-              type="checkbox"
-            />
-          </div>
-        </div>
-      </div>
-      <hr
-        class="solid"
-      />
-      <div
-        class="teams-container"
-      >
-        No teams match your current filters
-      </div>
-    </div>
-  </div>,
-  "debug": [Function],
-  "findAllByAltText": [Function],
-  "findAllByDisplayValue": [Function],
-  "findAllByLabelText": [Function],
-  "findAllByPlaceholderText": [Function],
-  "findAllByRole": [Function],
-  "findAllByTestId": [Function],
-  "findAllByText": [Function],
-  "findAllByTitle": [Function],
-  "findByAltText": [Function],
-  "findByDisplayValue": [Function],
-  "findByLabelText": [Function],
-  "findByPlaceholderText": [Function],
-  "findByRole": [Function],
-  "findByTestId": [Function],
-  "findByText": [Function],
-  "findByTitle": [Function],
-  "getAllByAltText": [Function],
-  "getAllByDisplayValue": [Function],
-  "getAllByLabelText": [Function],
-  "getAllByPlaceholderText": [Function],
-  "getAllByRole": [Function],
-  "getAllByTestId": [Function],
-  "getAllByText": [Function],
-  "getAllByTitle": [Function],
-  "getByAltText": [Function],
-  "getByDisplayValue": [Function],
-  "getByLabelText": [Function],
-  "getByPlaceholderText": [Function],
-  "getByRole": [Function],
-  "getByTestId": [Function],
-  "getByText": [Function],
-  "getByTitle": [Function],
-  "queryAllByAltText": [Function],
-  "queryAllByDisplayValue": [Function],
-  "queryAllByLabelText": [Function],
-  "queryAllByPlaceholderText": [Function],
-  "queryAllByRole": [Function],
-  "queryAllByTestId": [Function],
-  "queryAllByText": [Function],
-  "queryAllByTitle": [Function],
-  "queryByAltText": [Function],
-  "queryByDisplayValue": [Function],
-  "queryByLabelText": [Function],
-  "queryByPlaceholderText": [Function],
-  "queryByRole": [Function],
-  "queryByTestId": [Function],
-  "queryByText": [Function],
-  "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
-}
-`;
-
-exports[`Team > Team component rendered correctly 1`] = `
-{
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <nav
-        class="nav"
-      >
-        <img
-          alt="csgo-players"
-          class="nav-logo"
-          src="logo.png"
-        />
-      </nav>
-      <div
-        class="body"
-      >
-        <div
-          class="filter-and-sort"
-        >
-          <div
-            class="sort"
-          >
-            <label
-              class="label"
-              for="sort"
-            >
-              Sort options:
-               
-            </label>
             <select
               class="dropdown"
               id="sort"
@@ -362,185 +186,32 @@ exports[`Team > Team component rendered correctly 1`] = `
               </option>
             </select>
           </div>
-          <div
-            class="favorite"
-          >
-            <label
-              class="label"
-              for="favorite"
-            >
-              Show favorite teams:
-               
-            </label>
-            <input
-              id="favorite"
-              name="favorite"
-              type="checkbox"
-            />
-          </div>
-          <div
-            class="filter"
-          >
-            <div
-              class="country-select"
-            >
-              <label
-                class="label"
-                for="sort"
-              >
-                Filter by country:
-                 
-              </label>
-              <select
-                class="dropdown"
-                id="country"
-                name="country"
-              >
-                <option
-                  value=""
-                >
-                  All countries
-                </option>
-              </select>
-            </div>
-            <div
-              class="international"
-            >
-              <label
-                class="label"
-                for="international"
-              >
-                Show international teams:
-                 
-              </label>
-              <input
-                checked=""
-                id="international"
-                name="international"
-                type="checkbox"
-              />
-            </div>
-          </div>
         </div>
-        <hr
-          class="solid"
-        />
         <div
-          class="teams-container"
+          class="checkboxes"
         >
-          No teams match your current filters
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <nav
-      class="nav"
-    >
-      <img
-        alt="csgo-players"
-        class="nav-logo"
-        src="logo.png"
-      />
-    </nav>
-    <div
-      class="body"
-    >
-      <div
-        class="filter-and-sort"
-      >
-        <div
-          class="sort"
-        >
-          <label
+          <div
             class="label"
-            for="sort"
           >
-            Sort options:
-             
-          </label>
-          <select
-            class="dropdown"
-            id="sort"
-            name="sort"
-          >
-            <option
-              value="rank-ascending"
-            >
-              By rank (ascending)
-            </option>
-            <option
-              value="rank-descending"
-            >
-              By rank (descending)
-            </option>
-            <option
-              value="name-a-z"
-            >
-              By team name (a-z)
-            </option>
-            <option
-              value="name-z-a"
-            >
-              By team name (z-a)
-            </option>
-          </select>
-        </div>
-        <div
-          class="favorite"
-        >
-          <label
-            class="label"
-            for="favorite"
-          >
-            Show favorite teams:
-             
-          </label>
-          <input
-            id="favorite"
-            name="favorite"
-            type="checkbox"
-          />
-        </div>
-        <div
-          class="filter"
-        >
-          <div
-            class="country-select"
-          >
-            <label
-              class="label"
-              for="sort"
-            >
-              Filter by country:
-               
-            </label>
-            <select
-              class="dropdown"
-              id="country"
-              name="country"
-            >
-              <option
-                value=""
-              >
-                All countries
-              </option>
-            </select>
+            <p>
+              Show international teams: 
+            </p>
+            <p>
+              Show only favorite teams: 
+            </p>
           </div>
           <div
-            class="international"
+            class="select"
           >
-            <label
-              class="label"
-              for="international"
-            >
-              Show international teams:
-               
-            </label>
             <input
               checked=""
               id="international"
               name="international"
+              type="checkbox"
+            />
+            <input
+              id="favorite"
+              name="favorite"
               type="checkbox"
             />
           </div>
