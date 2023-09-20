@@ -58,7 +58,7 @@ export default function TeamNavigation({
       ) : (
         Array(teams)
           .fill(0)
-          .map((_, i) => <Button teamIndex={i} />)
+          .map((_, i) => <Button teamIndex={i} key={i} />)
       )}
 
       <IoIosArrowForward
