@@ -38,10 +38,12 @@ exports[`Snapshot test > Test whether app matches snapshot 1`] = `
             >
               <select
                 class="dropdown"
+                data-testid="selected-country-dropdown"
                 id="country"
                 name="country"
               >
                 <option
+                  data-testid="country-select-option"
                   value=""
                 >
                   All countries
@@ -49,6 +51,7 @@ exports[`Snapshot test > Test whether app matches snapshot 1`] = `
               </select>
               <select
                 class="dropdown"
+                data-testid="sort-option-dropdown"
                 id="sort"
                 name="sort"
               >
@@ -93,11 +96,13 @@ exports[`Snapshot test > Test whether app matches snapshot 1`] = `
             >
               <input
                 checked=""
+                data-testid="international-checkbox"
                 id="international"
                 name="international"
                 type="checkbox"
               />
               <input
+                data-testid="favorite-checkbox"
                 id="favorite"
                 name="favorite"
                 type="checkbox"
@@ -110,6 +115,7 @@ exports[`Snapshot test > Test whether app matches snapshot 1`] = `
         />
         <div
           class="teams-container"
+          data-testid="teams"
         >
           No teams match your current filters
         </div>
@@ -150,10 +156,12 @@ exports[`Snapshot test > Test whether app matches snapshot 1`] = `
           >
             <select
               class="dropdown"
+              data-testid="selected-country-dropdown"
               id="country"
               name="country"
             >
               <option
+                data-testid="country-select-option"
                 value=""
               >
                 All countries
@@ -161,6 +169,7 @@ exports[`Snapshot test > Test whether app matches snapshot 1`] = `
             </select>
             <select
               class="dropdown"
+              data-testid="sort-option-dropdown"
               id="sort"
               name="sort"
             >
@@ -205,11 +214,13 @@ exports[`Snapshot test > Test whether app matches snapshot 1`] = `
           >
             <input
               checked=""
+              data-testid="international-checkbox"
               id="international"
               name="international"
               type="checkbox"
             />
             <input
+              data-testid="favorite-checkbox"
               id="favorite"
               name="favorite"
               type="checkbox"
@@ -222,6 +233,7 @@ exports[`Snapshot test > Test whether app matches snapshot 1`] = `
       />
       <div
         class="teams-container"
+        data-testid="teams"
       >
         No teams match your current filters
       </div>
