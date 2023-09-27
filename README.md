@@ -4,9 +4,7 @@ En nettside som presenterer e-sport lag og spillere til spillet Counter-Strike: 
 
 ## Oppsett
 
-For å kjøre nettsiden, gå inn i csgo-teams mappen:  
-`cd csgo-teams`  
-Installer og kjør med npm:  
+For å starte nettsiden, installer og kjør med npm:  
 `npm install`  
 `npm run dev`
 
