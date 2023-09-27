@@ -12,7 +12,7 @@ const arrowSize: number = 40;
 export default function TeamNavigation({
   displayedTeamIndex,
   setDisplayedTeamIndex,
-  teams,
+  teams
 }: TeamNavigationProps) {
   const Button = ({ teamIndex }: { teamIndex: number }) =>
     teamIndex === displayedTeamIndex ? (

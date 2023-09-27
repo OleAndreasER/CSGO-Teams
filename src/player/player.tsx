@@ -10,8 +10,8 @@ export default function Player({
     fullname: fullnameWithNickname,
     image,
     nickname,
-    country: { name: countryName, flag: countryFlagImage },
-  },
+    country: { name: countryName, flag: countryFlagImage }
+  }
 }: PlayerProps) {
   // Remove the nickname from the fullname
   const fullname: string = fullnameWithNickname
