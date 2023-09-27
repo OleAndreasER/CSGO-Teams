@@ -8,14 +8,14 @@ const mockData1: PlayerData = {
   fullname: "Oleksandr 's1mple' Kostyliev", // 2 names with nickname in the middle
   image: "",
   nickname: "s1mple",
-  country: { name: "Ukraine", flag: "" },
+  country: { name: "Ukraine", flag: "" }
 };
 
 const mockData2: PlayerData = {
   fullname: "Russel 'Twistzz' Van Dulken", // 3 names with nickname in the middle
   image: "",
   nickname: "Twistzz",
-  country: { name: "Canada", flag: "" },
+  country: { name: "Canada", flag: "" }
 };
 
 describe("Player", () => {

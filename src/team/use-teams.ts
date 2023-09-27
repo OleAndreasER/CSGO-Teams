@@ -12,5 +12,5 @@ export const useTeams = (): TeamData[] | undefined =>
     refetchOnMount: false,
     refetchOnWindowFocus: false,
     refetchOnReconnect: false,
-    staleTime: Infinity,
+    staleTime: Infinity
   }).data;

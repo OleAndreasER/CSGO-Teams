@@ -37,12 +37,12 @@ export function FavoritesProvider({ children }: FavoritesProps) {
         toggleFavorite: (team) => {
           const toggledIsFavorite = {
             ...isFavorite,
-            [team.id]: !(isFavorite[team.id] ?? false),
+            [team.id]: !(isFavorite[team.id] ?? false)
           };
           //Toggle favorites both in this component's state and in local storage.
           setIsFavorite(toggledIsFavorite);
           localStorage.setItem("isFavorite", JSON.stringify(toggledIsFavorite));
-        },
+        }
       }}
     >
       {children}

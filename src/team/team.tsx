@@ -11,7 +11,7 @@ interface TeamProps {
 
 export default function Team({
   team,
-  team: { name: teamName, logo, ranking, players },
+  team: { name: teamName, logo, ranking, players }
 }: TeamProps) {
   const { isFavorite, toggleFavorite } = useContext(FavoritesContext);
 

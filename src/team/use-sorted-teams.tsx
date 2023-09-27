@@ -62,7 +62,7 @@ export default function useSortedTeams(
       if (selectedCountry !== "") {
         // If a country is selected, set teamsCopy to (a copy of) the array of teams from that country
         teamsCopy = [
-          ...(teamsWithPlayersFromCountry.get(selectedCountry) ?? []),
+          ...(teamsWithPlayersFromCountry.get(selectedCountry) ?? [])
         ];
       } else {
         // If no country is selected, set the teamsCopy to (a copy of) the original array of teams
@@ -104,7 +104,7 @@ export default function useSortedTeams(
     showInternational,
     showFavorite,
     teamsWithPlayersFromCountry,
-    isFavorite,
+    isFavorite
   ]);
 
   return { teams, countries };

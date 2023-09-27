@@ -89,9 +89,15 @@ export default function Mainpage() {
               id="country"
               onChange={(e) => handleChangeCountry(e.target.value)}
             >
-              <option value="" data-testid="country-select-option">All countries</option>
+              <option value="" data-testid="country-select-option">
+                All countries
+              </option>
               {countries.map((country) => (
-                <option key={country} value={country} data-testid="country-select-option">
+                <option
+                  key={country}
+                  value={country}
+                  data-testid="country-select-option"
+                >
                   {country}
                 </option>
               ))}
