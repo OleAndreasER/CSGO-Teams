@@ -11,35 +11,35 @@ const playerData1: PlayerData = {
   fullname: "Dan Madesclaire",
   image: "",
   nickname: "apEX",
-  country: { name: "France", flag: "" },
+  country: { name: "France", flag: "" }
 };
 
 const playerData4: PlayerData = {
   fullname: "Mathieu Herbaut",
   image: "",
   nickname: "ZywOo",
-  country: { name: "France", flag: "" },
+  country: { name: "France", flag: "" }
 };
 
 const playerData2: PlayerData = {
   fullname: "Lotan Giladi",
   image: "",
   nickname: "Spinx",
-  country: { name: "Israel", flag: "" },
+  country: { name: "Israel", flag: "" }
 };
 
 const playerData3: PlayerData = {
   fullname: "Emil Reif",
   image: "",
   nickname: "Magisk",
-  country: { name: "Denmark", flag: "" },
+  country: { name: "Denmark", flag: "" }
 };
 
 const playerData5: PlayerData = {
   fullname: "Peter Rasmussen",
   image: "",
   nickname: "dupreeh",
-  country: { name: "Denmark", flag: "" },
+  country: { name: "Denmark", flag: "" }
 };
 
 const playerArray: PlayerData[] = [];
@@ -54,7 +54,7 @@ const teamData: TeamData = {
   ranking: 1,
   name: "Vitality",
   logo: "",
-  players: playerArray,
+  players: playerArray
 };
 
 describe("Team", () => {
