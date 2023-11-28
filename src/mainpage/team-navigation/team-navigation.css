@@ -1,5 +1,4 @@
 .team-navigation {
-  position: absolute;
   right: 10%;
   margin-top: 20px;
   display: flex;
@@ -7,6 +6,10 @@
   align-items: center;
   text-align: center;
   font-weight: bold;
+  margin-left: auto;
+  width: inherit;
+  justify-content: center;
+  margin-right: 2vw;
 }
 
 .team-navigation button {
@@ -38,9 +41,10 @@
   user-select: none;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 960px) {
   .team-navigation {
-    position: static;
     justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
   }
 }

@@ -145,7 +145,7 @@ export default function Mainpage() {
       <hr className="solid" />
       <div className="teams-container" data-testid="teams">
         {teams.length > 0 ? (
-          <div>
+          <div className="teams-inner-wrapper">
             <Team team={teams[displayedTeamIndex]} />
             <TeamNavigation
               displayedTeamIndex={displayedTeamIndex}

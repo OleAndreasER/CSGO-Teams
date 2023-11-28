@@ -72,6 +72,24 @@
   border: 1px solid black;
 }
 
+.teams-container {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.teams-inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 960px) {
+  .teams-inner-wrapper {
+    flex-direction: column-reverse;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .options {
     flex-direction: column;
@@ -84,10 +102,4 @@
     flex-direction: column;
     gap: 10px;
   }
-}
-
-.teams-container {
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
 }
