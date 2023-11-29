@@ -82,14 +82,13 @@ body {
   cursor: pointer;
 }
 
-/* 768 px */
-@media only screen and (max-width: calc(768px*(5/4))) {
-  /* For small screen sizes only */
-  /*.team {
-        height: var(--screen-height-mobile);
-        width: var(--screen-width-mobile);
-    }*/
+@media only screen and (max-width: 960px) {
+  .team {
+    margin-top: 20px;
+  }
+}
 
+@media only screen and (max-width: calc(768px*(5/4))) {
   .players {
     flex-direction: column;
   }

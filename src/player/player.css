@@ -8,7 +8,6 @@
   border-bottom: none;
   display: grid;
   grid-template-columns: 1fr;
-
   min-height: auto;
   min-width: auto;
 }
@@ -44,4 +43,11 @@
   max-width: 100%;
   height: auto;
   margin: 20px 0 20px 0;
+}
+
+@media only screen and (max-width: 960px) {
+  .player-fullname {
+    height: auto;
+    min-height: 10px;
+  }
 }
